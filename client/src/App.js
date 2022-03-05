@@ -1,11 +1,11 @@
 import "./App.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Tracker from "./pages/Tracker";
+import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-      <Tracker />
+      <Home />
     </div>
   );
 }
