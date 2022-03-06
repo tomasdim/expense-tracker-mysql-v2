@@ -21,9 +21,8 @@ const Tracker = ({ operations }) => {
             />
             <div className="input-container">
               <select name="type">
-                <option value="0">Type</option>
                 <option value="expense">Expense</option>
-                <option value="earning">Earning</option>
+                <option value="earning">Income</option>
               </select>
               <input placeholder="Price" type="text" name="price" />
             </div>
