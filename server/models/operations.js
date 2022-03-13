@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsTo(User, { foreignKey: "userId", as: "user" });
     }
-    toJSON() {
-      return { ...this.get(), id: undefined };
-    }
+    // toJSON() {
+    //   return { ...this.get(), id: undefined };
+    // }
   }
   Operations.init(
     {

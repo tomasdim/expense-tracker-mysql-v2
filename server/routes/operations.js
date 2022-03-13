@@ -80,6 +80,7 @@ router.delete("/operations/:id", async (req, res) => {
     });
     await operation.destroy();
     return res.json({ message: "Operation has been deleted!" });
+    console.log(id)
   } catch (err) {
     console.log(err);
     return res.status(500).json({ error: "Something went wrong!" });
