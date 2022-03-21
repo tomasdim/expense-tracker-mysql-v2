@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Operation from "./components/Operation";
+import CompShowOperations from "./components/ShowOperations";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/operations" element={<div>oeprations</div>} />
+        <Route path="/operations" element={<CompShowOperations/>} />
       </Routes>
     </BrowserRouter>
   );
