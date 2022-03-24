@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
+const auth = require('../middlewares/auth')
 
 //CREATE USER
 router.post("/users", async (req, res) => {
@@ -26,7 +27,7 @@ router.post("/users", async (req, res) => {
 });
 
 //GET ALL USERS
-router.get("/users", async (req, res) => {
+router.get("/users", auth, async (req, res) => {
   try {
     const users = await User.findAll();
     return res.json(users);
@@ -72,7 +73,7 @@ router.put("/users/:id", async (req, res) => {
 });
 
 //DELETE USER
-router.delete("/users/:id", async (req, res) => {
+router.delete("/users/:id", auth, async (req, res) => {
   const id = req.params.id;
   try {
     const user = await User.findOne({

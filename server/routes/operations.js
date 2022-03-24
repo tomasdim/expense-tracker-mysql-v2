@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Operations, User } = require("../models");
 const user = require("../models/user");
+const auth = require('../middlewares/auth')
 
 //CREATE OPERATION
 router.post("/operations", async (req, res) => {
@@ -24,7 +25,7 @@ router.post("/operations", async (req, res) => {
 });
 
 //GET ALL OPERATIONS
-router.get("/operations", async (req, res) => {
+router.get("/operations", auth, async (req, res) => {
   try {
     const operations = await Operations.findAll({ include: "user" });
 

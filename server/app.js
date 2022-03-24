@@ -9,9 +9,9 @@ const app = express();
 app.use(express.json());
 
 //Routes
-app.use("", operationsRoute);
-app.use("", operationsUser);
-app.use("", operationsAuth);
+app.use(operationsRoute);
+app.use(operationsUser);
+app.use(operationsAuth);
 
 app.listen({ port: 5000 }, async () => {
   console.log("Server up on http://localhost:5000");
